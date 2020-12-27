@@ -7,4 +7,6 @@ Office: B8F12
 Address: 151, University Rd., San Shia District, New Taipei City, 23741 Taiwan  
 Email: myday@gm.ntpu.edu.tw  
 Web: http://web.ntpu.edu.tw/~myday/  
+
+Github Pages: https://imyday.github.io/ 
   
