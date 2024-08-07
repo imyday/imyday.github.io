@@ -1,1 +1,128 @@
-index.html
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-ng-app="webpub"
+  data-ng-controller="appController as appCtrl"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title data-ng-bind="appCtrl.title"></title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="vendor/jasny-bootstrap/css/jasny-bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- MetisMenu CSS -->
+    <!--<link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet">-->
+
+    <!-- Custom CSS -->
+    <link href="css/utils.css" rel="stylesheet" />
+    <!--<link href="vendor/sb-admin/css/sb-admin-2.css" rel="stylesheet">-->
+
+    <!-- Custom Fonts -->
+    <link
+      href="vendor/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App styles -->
+    <link href="dist/css/vendor.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+    <!-- MediaElement Styles for controls -->
+    <style>
+      .mejs__overlay-button {
+        background-image: url("content/images/mejs-controls.svg");
+      }
+      .mejs__overlay-loading-bg-img {
+        background-image: url("content/images/mejs-controls.svg");
+      }
+      .mejs__button > button {
+        background-image: url("content/images/mejs-controls.svg");
+      }
+    </style>
+
+    <!-- GDPR -->
+    <script src="https://s3-us-west-2.amazonaws.com/ieeeshutpages/gdpr/settings.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.computer.org/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"
+    />
+    <script src="https://cdn.computer.org/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
+    <!-- Preload Some Compiled Scripts -->
+    <script type="text/javascript" src="dist/js/vendor.js"></script>
+    <script type="text/javascript" src="data/config.js"></script>
+    <script type="text/javascript" src="data/data.js"></script>
+    <script type="text/javascript" src="data/additional-pages.js"></script>
+  </head>
+  <body>
+    <webpub-notifications></webpub-notifications>
+
+    <div
+      class="container-fluid"
+      data-ng-controller="bannerController as bannerCtrl"
+    >
+      <div class="row p0" data-ng-show="bannerCtrl.bannerFile">
+        <div class="col-md-12 p0">
+          <img
+            data-ui-sref="home"
+            class="img-responsive"
+            data-ng-src="{{bannerCtrl.bannerFile}}"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 p0">
+          <nav
+            class="navmenu navmenu-default radius-clear"
+            data-ng-controller="navController as navCtrl"
+          >
+            <ul class="nav navmenu-nav">
+              <li data-ng-repeat="conference in navCtrl.conferences">
+                <a data-ui-sref="toc({index: $index})"
+                  >{{conference.acronym}} {{conference.year}}</a
+                >
+              </li>
+              <li data-ng-repeat="extraPage in navCtrl.additionalPages">
+                <a
+                  data-ui-sref="extra-page({pageName: extraPage.pageName, location: extraPage.fileLocation})"
+                  >{{extraPage.pageName}}</a
+                >
+              </li>
+              <li><a data-ui-sref="author-index">Author Index</a></li>
+              <li data-ng-if="navCtrl.config.enableAffiliationIndex">
+                <a data-ui-sref="affiliation-index">Affiliation Index</a>
+              </li>
+              <li><a data-ui-sref="search">Search</a></li>
+              <li data-ng-if="navCtrl.webpubDownloadEnabled">
+                <a
+                  href="#"
+                  data-ng-click="navCtrl.onWebpubDownloadClicked($event)"
+                  >Download Full Conference Proceedings</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-md-10">
+          <ui-view></ui-view>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application -->
+    <script type="text/javascript" src="dist/js/webpub-app.js"></script>
+  </body>
+</html>
