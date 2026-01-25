@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAPAI Agentic AI 課程地圖 v2.1</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #4a5568;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+            --accent-green: #e6fffa;
+            --accent-green-text: #2c7a7b;
+            --accent-yellow: #fffff0;
+            --accent-yellow-text: #b7791f;
+            --accent-red: #fff5f5;
+            --accent-red-text: #c53030;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--card-bg);
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .meta-info {
+            background: #ebf8ff;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+            border-radius: 4px;
+        }
+
+        .meta-info p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .meta-label {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* Section Styles */
+        section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+
+        h3 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            background-color: #f1f5f9;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+
+        h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Legend & Methodology */
+        .legend {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed var(--secondary-color);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Card/Sub-theme Styles */
+        .sub-theme-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .sub-theme-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .level-green { border-left: 5px solid #48bb78; }
+        .level-yellow { border-left: 5px solid #ecc94b; }
+        .level-red { border-left: 5px solid #f56565; }
+
+        .learning-objective, .use-case {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .learning-objective strong, .use-case strong {
+            color: var(--secondary-color);
+        }
+
+        /* Resource List Styles */
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Table of Contents */
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            column-count: 1;
+        }
+        
+        @media (min-width: 768px) {
+            .toc-list { column-count: 2; }
+        }
+
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+
+        .toc-list a {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        .toc-list a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Back to top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            display: none;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            section { padding: 20px; }
+            .meta-info { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>NAPAI Agentic AI 課程地圖 v2.1</h1>
+        <div class="meta-info">
+            <p><span class="meta-label">更新日期：</span>2026-01-25</p>
+            <p><span class="meta-label">編制單位：</span>國家智慧代理與實體AI機器人課程推動計畫辦公室（NAPAI）</p>
+            <p><span class="meta-label">適用對象：</span>教育工作者、AI 學習者、AI 開發者、政策規劃者</p>
+            <p><span class="meta-label">線上最新版：</span><a href="https://napaincu.github.io/" target="_blank">https://napaincu.github.io/</a></p>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <section id="purpose">
+        <h2>一、課程地圖說明（Purpose & Scope）</h2>
+        <p>本課程地圖提供一套系統化、可擴充、與國際接軌的 <strong>Agentic AI 學習路徑</strong>，協助學習者由基礎能力逐步進入多代理系統、治理與實務部署。</p>
+        <p><strong>設計原則：</strong></p>
+        <ul>
+            <li>由「基礎能力 -> 核心概念 -> 系統實作 -> 治理與風險 -> 產業應用」逐層遞進</li>
+            <li>每一子主題至少搭配：
+                <ul>
+                    <li>一個國際知名教育平台</li>
+                    <li>一個雲端或工具平台</li>
+                    <li>一個學術或研究型來源</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section id="methodology">
+        <h2>二、資源選擇方法論（Methodology）</h2>
+        <p>本課程地圖所列資源係依下列準則篩選：</p>
+        <ol>
+            <li><strong>可信度（Trustworthiness）</strong> - 來源為具國際聲譽之機構（如：DeepLearning.AI、Microsoft、Nvidia、Google、AWS、Stanford、Harvard、MIT、CMU、Berkeley 等），且具明確作者或單位背書。</li>
+            <li><strong>權威性（Authoritativeness）</strong> - 為官方訓練資源、學術課程、或主流平台學習路徑，並被學界或業界廣泛引用。</li>
+            <li><strong>專業度（Expertise）</strong> - 課程內容具技術深度或實務導向，可對應實際系統開發或政策應用。</li>
+            <li><strong>實用性（Experience）</strong> - 經實際教學或專案驗證可行，可快速導入教育場域。</li>
+        </ol>
+    </section>
+
+    <section id="toc">
+        <h2>三、快速導覽（Table of Contents）</h2>
+        <ul class="toc-list">
+            <li><a href="#1-foundations">1. Foundations (基礎能力)</a></li>
+            <li><a href="#2-llm-fundamentals">2. LLM Fundamentals (大型語言模型基礎)</a></li>
+            <li><a href="#3-core-agent-concepts">3. Core Agent Concepts (核心 Agent 概念)</a></li>
+            <li><a href="#4-tool-use-function-calling">4. Tool Use & Function Calling (工具使用與函數呼叫)</a></li>
+            <li><a href="#5-memory-rag-systems">5. Memory & RAG Systems (記憶與檢索增強生成)</a></li>
+            <li><a href="#6-frameworks-implementation">6. Frameworks & Implementation (框架與實作)</a></li>
+            <li><a href="#7-multi-agent-systems">7. Multi-Agent Systems (多智慧代理系統)</a></li>
+            <li><a href="#8-evaluation-safety-governance">8. Evaluation, Safety & Governance (評估、安全與治理)</a></li>
+            <li><a href="#9-production-capstone">9. Production & Capstone (生產與專題)</a></li>
+            <li><a href="#10-advanced-topics">10. Advanced Topics (進階主題)</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>四、課程主題地圖（Course Map）</h2>
+        <div class="legend">
+            <strong>標註說明：</strong> 🟢 入門　🟡 進階　🔴 專業
+        </div>
+
+        <h3 id="1-foundations">1. Foundations</h3>
+
+        <div class="sub-theme-card level-green">
+            <h4>1-1 Python programming 🟢</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握開發 AI 應用所需的 Python 程式語言基礎與環境架設。</div>
+            <div class="use-case"><strong>適用情境：</strong>撰寫自動化腳本、處理數據資料。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-python-for-beginners/" target="_blank">AI Python for Beginners</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-eu/training/instructor-led-workshops/fundamentals-of-deep-learning/" target="_blank">Fundamentals of Deep Learning</a></li>
+                <li>Google – <a href="https://www.cloudskillsboost.google/paths/118" target="_blank">Introduction to Generative AI</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">Building GenAI Apps with Bedrock</a></li>
+                <li>Academic – <a href="https://cs50.harvard.edu/python/" target="_blank">Harvard CS50 Python</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-green">
+            <h4>1-2 API integration and data handling 🟢</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>學會呼叫 LLM API 並處理輸入輸出的資料格式（JSON 等）。</div>
+            <div class="use-case"><strong>適用情境：</strong>開發簡易聊天機器人、串接第三方服務。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-systems-with-chatgpt/" target="_blank">Building Systems with ChatGPT API</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/training/" target="_blank">Deep Learning Institute</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://www.coursera.org/learn/amazon-bedrock-getting-started" target="_blank">Amazon Bedrock Getting Started</a></li>
+                <li>Academic – <a href="https://ocw.mit.edu/" target="_blank">MIT OpenCourseWare</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-green">
+            <h4>1-3 Machine Learning fundamentals 🟢</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>理解機器學習的核心概念、演算法與運作原理。</div>
+            <div class="use-case"><strong>適用情境：</strong>數據分析、預測模型建立。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/machine-learning-specialization/" target="_blank">Machine Learning Specialization</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">AI For Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-eu/training/instructor-led-workshops/fundamentals-of-deep-learning/" target="_blank">Fundamentals of Deep Learning</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/training/learn-about/machine-learning/" target="_blank">AWS ML Learning Path</a></li>
+                <li>Academic – <a href="https://cs229.stanford.edu/" target="_blank">Stanford CS229 ML</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-green">
+            <h4>1-4 Model training, evaluation, and bias 🟢</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>學習模型訓練流程、成效評估指標及如何識別偏差。</div>
+            <div class="use-case"><strong>適用情境：</strong>優化模型準確度、確保 AI 系統公平性。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/machine-learning-specialization/" target="_blank">Machine Learning Specialization</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">AI For Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-eu/training/instructor-led-workshops/fundamentals-of-deep-learning/" target="_blank">Fundamentals of Deep Learning</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/training/learn-about/machine-learning/" target="_blank">AWS ML Training</a></li>
+                <li>Academic – <a href="https://openlearninglibrary.mit.edu/courses/course-v1:MITx+6.036+1T2019/about" target="_blank">MIT 6.036 Intro to ML</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-green">
+            <h4>1-5 Essential math for AI 🟢</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>補強線性代數、微積分與機率統計等 AI 數學基礎。</div>
+            <div class="use-case"><strong>適用情境：</strong>研讀 AI 論文、理解演算法底層邏輯。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/mathematics-for-machine-learning-and-data-science-specialization/" target="_blank">Mathematics for ML Specialization</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">AI For Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/training/" target="_blank">Deep Learning Institute</a></li>
+                <li>Google – <a href="https://www.cloudskillsboost.google/" target="_blank">Google Cloud Skills Boost</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/" target="_blank">MIT 18.06 Linear Algebra</a></li>
+            </ul>
+        </div>
+
+        <h3 id="2-llm-fundamentals">2. LLM Fundamentals</h3>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>2-1 Foundations of large language models 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>理解 LLM 的發展歷史、能力範疇與基本限制。</div>
+            <div class="use-case"><strong>適用情境：</strong>評估導入 LLM 的可行性與選擇合適模型。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/generative-ai-with-llms/" target="_blank">Generative AI with LLMs</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/generative-ai-llm-associate/" target="_blank">Generative AI LLMs Certification</a></li>
+                <li>Google – <a href="https://www.cloudskillsboost.google/paths/118" target="_blank">Introduction to Generative AI</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS GenAI Developers Certificate</a></li>
+                <li>Academic – <a href="https://stanford-cs324.github.io/winter2022/" target="_blank">Stanford CS324 LLMs</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>2-2 Transformer architecture 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>深入理解 Transformer 架構及其 Attention 機制。</div>
+            <div class="use-case"><strong>適用情境：</strong>閱讀技術文獻、進行模型架構優化。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/how-transformer-llms-work/" target="_blank">How Transformer LLMs Work</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/generative-ai-llm-professional/" target="_blank">Generative AI LLMs Professional</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS GenAI Learning</a></li>
+                <li>Academic – <a href="https://cme295.stanford.edu/" target="_blank">Stanford CME295 Transformers</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-green">
+            <h4>2-3 Prompt engineering 🟢</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握提示詞設計技巧以引導模型產出高品質結果。</div>
+            <div class="use-case"><strong>適用情境：</strong>優化使用者互動體驗、提升任務完成率。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" target="_blank">ChatGPT Prompt Engineering</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/learning-path/generative-ai-llm/" target="_blank">Generative AI LLM Learning Path</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Bedrock Training</a></li>
+                <li>Academic – <a href="https://cs50.harvard.edu/ai/" target="_blank">Harvard CS50 AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>2-4 Model adaptation and tuning 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>學習微調（Fine-tuning）技術以適應特定領域任務。</div>
+            <div class="use-case"><strong>適用情境：</strong>建立法律、醫療等專業領域的專屬模型。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/finetuning-large-language-models/" target="_blank">Finetuning Large Language Models</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/generative-ai-llm-professional/" target="_blank">Generative AI LLMs Professional</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS GenAI Developers Certificate</a></li>
+                <li>Academic – <a href="https://www.cmu.edu/online/gai-llm/curriculum/index.html" target="_blank">CMU LLM Certificate</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>2-5 Evaluation of LLM behavior 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>建立評估框架以測試 LLM 的準確性與一致性。</div>
+            <div class="use-case"><strong>適用情境：</strong>模型上線前的品質保證（QA）與基準測試。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/" target="_blank">Evaluating and Debugging GenAI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/learning-path/generative-ai-llm/" target="_blank">Generative AI LLM Learning Path</a></li>
+                <li>Google – <a href="https://www.cloudskillsboost.google/" target="_blank">Google Cloud Skills Boost</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://inst.eecs.berkeley.edu/~cs188/" target="_blank">Berkeley CS188 AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>2-6 Role of LLMs in agent systems 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>理解 LLM 在代理系統中作為「大腦」的決策角色。</div>
+            <div class="use-case"><strong>適用情境：</strong>設計能夠自主規劃任務的 Agent 系統。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning Plan</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents MOOC</a></li>
+            </ul>
+        </div>
+
+        <h3 id="3-core-agent-concepts">3. Core Agent Concepts</h3>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>3-1 What defines an agent 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>明確定義 Agent 與傳統 Chatbot 的差異及其自主性特徵。</div>
+            <div class="use-case"><strong>適用情境：</strong>Agentic AI 產品定義與架構規劃。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1267" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://cs329a.stanford.edu/" target="_blank">Stanford CS329A Self-Improving AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>3-2 Agent architectures 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握 ReAct、Chain of Thought 等常見 Agent 架構設計模式。</div>
+            <div class="use-case"><strong>適用情境：</strong>系統架構設計與選型。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/" target="_blank">AI Agentic Design Patterns with AutoGen</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1162" target="_blank">Build GenAI Agents with Vertex AI</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Agents</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank">Berkeley Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>3-3 Reasoning and decision-making 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>強化 Agent 的邏輯推論與多步驟決策能力。</div>
+            <div class="use-case"><strong>適用情境：</strong>處理複雜且非線性的任務流程。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://online.stanford.edu/enhancing-your-understanding-agentic-ai-practical-guide" target="_blank">Stanford Online Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>3-4 Planning mechanisms 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>學習如何讓 Agent 進行任務拆解與執行路徑規劃。</div>
+            <div class="use-case"><strong>適用情境：</strong>專案管理自動化、複雜行程規劃。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Agents</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/adv-llm-agents/sp25" target="_blank">Berkeley Advanced LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>3-5 Feedback and self-correction 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>實作 Agent 的自我反思與錯誤修正機制。</div>
+            <div class="use-case"><strong>適用情境：</strong>提升系統的穩健性與容錯率。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1267" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://online.stanford.edu/courses/cs329a-self-improving-ai-agents" target="_blank">Stanford CS329A</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>3-6 Agent limitations and failure modes 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>識別 Agent 的幻覺、迴圈錯誤等常見失效模式。</div>
+            <div class="use-case"><strong>適用情境：</strong>風險評估與防護機制設計。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Bedrock Training</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>3-7 Long-horizon autonomy (conceptual) 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>探討 Agent 執行長週期任務的挑戰與解決方案。</div>
+            <div class="use-case"><strong>適用情境：</strong>自主研究助理、長期專案監控。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1267" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://cs329a.stanford.edu/" target="_blank">Stanford CS329A</a></li>
+            </ul>
+        </div>
+
+        <h3 id="4-tool-use-function-calling">4. Tool Use & Function Calling</h3>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>4-1 Tool-augmented agent design 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>設計能有效利用外部工具的 Agent 系統。</div>
+            <div class="use-case"><strong>適用情境：</strong>擴充 LLM 能力（如計算機、搜尋引擎）。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/" target="_blank">Functions, Tools and Agents with LangChain</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1162" target="_blank">Build GenAI Agents with Vertex AI</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Agents</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank">Berkeley Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>4-2 Function calling mechanisms 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>深入理解函數呼叫的技術細節與參數傳遞。</div>
+            <div class="use-case"><strong>適用情境：</strong>精確控制 API 互動。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/" target="_blank">Functions, Tools and Agents with LangChain</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Bedrock Training</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents MOOC</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>4-3 Custom tool development 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>開發客製化工具供 Agent 調用以滿足特定業務需求。</div>
+            <div class="use-case"><strong>適用情境：</strong>企業內部系統整合。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://developer.nvidia.com/nemo-agent-toolkit" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Agents</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/sp25" target="_blank">Berkeley Advanced LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>4-4 Tool orchestration and workflows 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>學習編排多工具協作的流程與邏輯。</div>
+            <div class="use-case"><strong>適用情境：</strong>複雜業務流程自動化。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1162" target="_blank">Build GenAI Agents with Vertex AI</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://cs329a.stanford.edu/" target="_blank">Stanford CS329A</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>4-5 Reliability and safety 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>確保工具調用的安全性，防止誤操作或惡意攻擊。</div>
+            <div class="use-case"><strong>適用情境：</strong>金融交易、資料庫寫入等高風險操作。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1267" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock Guardrails</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>4-6 Observability and debugging 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>建立監控機制以追蹤 Agent 的行為與工具使用狀況。</div>
+            <div class="use-case"><strong>適用情境：</strong>系統維運與錯誤排查。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/" target="_blank">Evaluating and Debugging GenAI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.cloudskillsboost.google/" target="_blank">Google Cloud Skills Boost</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://introtodeeplearning.com/" target="_blank">MIT 6.S191 Deep Learning</a></li>
+            </ul>
+        </div>
+
+        <h3 id="5-memory-rag-systems">5. Memory & RAG Systems</h3>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>5-1 Memory architectures 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>理解短期與長期記憶在 Agent 系統中的設計架構。</div>
+            <div class="use-case"><strong>適用情境：</strong>維持對話連貫性與上下文理解。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/retrieval-augmented-generation-rag/" target="_blank">RAG Course</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1162" target="_blank">Build GenAI Agents with Vertex AI</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Knowledge Bases</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>5-2 Memory representation and storage 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>學習向量資料庫與記憶儲存的技術實作。</div>
+            <div class="use-case"><strong>適用情境：</strong>知識庫建置與檢索優化。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/" target="_blank">Building and Evaluating Advanced RAG</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Bedrock Training</a></li>
+                <li>Academic – <a href="https://stanford-cs324.github.io/winter2022/" target="_blank">Stanford CS324</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>5-3 Retrieval-Augmented Generation 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握 RAG 技術以增強 Agent 的知識獲取能力。</div>
+            <div class="use-case"><strong>適用情境：</strong>企業知識問答、即時資訊查詢。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/retrieval-augmented-generation-rag/" target="_blank">RAG Course</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1162" target="_blank">Build GenAI Agents with Vertex AI</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Knowledge Bases</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank">Berkeley Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>5-4 State and context management 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>有效管理對話狀態與上下文窗口限制。</div>
+            <div class="use-case"><strong>適用情境：</strong>長對話處理與複雜任務狀態追蹤。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/" target="_blank">LangChain: Chat with Your Data</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Agents</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents MOOC</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>5-5 Reliability and governance 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>確保 RAG 系統的資訊準確性與引用來源管控。</div>
+            <div class="use-case"><strong>適用情境：</strong>避免生成錯誤資訊、知識庫版控。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/" target="_blank">Building and Evaluating Advanced RAG</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock Guardrails</a></li>
+                <li>Academic – <a href="https://online.stanford.edu/enhancing-your-understanding-agentic-ai-practical-guide" target="_blank">Stanford Online Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>5-6 Privacy and data governance 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>在 RAG 系統中落實資料隱私與存取權限控管。</div>
+            <div class="use-case"><strong>適用情境：</strong>處理敏感個資或機密文件。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/" target="_blank">Building and Evaluating Advanced RAG</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock Security</a></li>
+                <li>Academic – <a href="https://openlearning.mit.edu/news/explore-world-artificial-intelligence-online-courses-mit" target="_blank">MIT Ethics of Technology</a></li>
+            </ul>
+        </div>
+
+        <h3 id="6-frameworks-implementation">6. Frameworks & Implementation</h3>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>6-1 Agent framework ecosystem 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>認識主流 Agent 開發框架（LangChain, AutoGen 等）及其生態系。</div>
+            <div class="use-case"><strong>適用情境：</strong>技術選型與開發工具評估。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/" target="_blank">AI Agentic Design Patterns with AutoGen</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://developer.nvidia.com/nemo-agent-toolkit" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1162" target="_blank">Build GenAI Agents with Vertex AI</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank">Berkeley Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>6-2 Core agent components 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>解析框架中的核心元件（Profile, Memory, Planner）實作方式。</div>
+            <div class="use-case"><strong>適用情境：</strong>深入客製化開發。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1267" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Agents</a></li>
+                <li>Academic – <a href="https://cs329a.stanford.edu/" target="_blank">Stanford CS329A</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>6-3 Build vs framework trade-offs 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>評估自建系統與使用既有框架的優缺點與成本效益。</div>
+            <div class="use-case"><strong>適用情境：</strong>專案初期的技術決策。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>6-4 Custom agent loop implementation 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>實作 Agent 的核心控制迴圈（Control Loop）以精確掌控行為。</div>
+            <div class="use-case"><strong>適用情境：</strong>需要高度客製化行為邏輯的場景。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1162" target="_blank">Build GenAI Agents with Vertex AI</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Agents</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/sp25" target="_blank">Berkeley Advanced LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>6-5 Engineering best practices 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握 Prompt 版本管理、測試與 CI/CD 等工程化實踐。</div>
+            <div class="use-case"><strong>適用情境：</strong>團隊協作開發與系統維護。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://www.cmu.edu/online/gai-llm/curriculum/index.html" target="_blank">CMU LLM Certificate</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>6-6 Deployment readiness 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>評估系統部署前的效能、成本與安全準備度。</div>
+            <div class="use-case"><strong>適用情境：</strong>產品上線前的最終檢核。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS GenAI Developers Certificate</a></li>
+                <li>Academic – <a href="https://online.stanford.edu/courses/cs329a-self-improving-ai-agents" target="_blank">Stanford CS329A</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>6-7 Interface and protocol standards 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>了解 Agent 間通訊的協定標準與介面規範。</div>
+            <div class="use-case"><strong>適用情境：</strong>跨系統整合與互操作性設計。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-toward-computer-use-with-anthropic/" target="_blank">Building Toward Computer Use</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://developer.nvidia.com/nemo-agent-toolkit" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank">Berkeley Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <h3 id="7-multi-agent-systems">7. Multi-Agent Systems</h3>
+
+        <div class="sub-theme-card level-red">
+            <h4>7-1 Architectures: hierarchical, collaborative, swarm 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握階層式、協作式與蜂群式等多智慧代理系統架構。</div>
+            <div class="use-case"><strong>適用情境：</strong>解決單一 Agent 無法處理的複雜大規模任務。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/" target="_blank">Multi AI Agent Systems with crewAI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents MOOC</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>7-2 Agent communication protocols 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>設計 Agent 之間的訊息傳遞與溝通機制。</div>
+            <div class="use-case"><strong>適用情境：</strong>確保多智慧代理協作的效率與正確性。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Bedrock Multi-Agent</a></li>
+                <li>Academic – <a href="https://cs329a.stanford.edu/" target="_blank">Stanford CS329A</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>7-3 Coordination and decision-making 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>實作多智慧代理的協調機制與衝突解決策略。</div>
+            <div class="use-case"><strong>適用情境：</strong>資源分配與共同決策。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1267" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/adv-llm-agents/sp25" target="_blank">Berkeley Advanced LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>7-4 Joint planning and execution 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>讓多個 Agent 共同制定計畫並分工執行。</div>
+            <div class="use-case"><strong>適用情境：</strong>複雜專案執行與團隊模擬。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/practical-multi-ai-agents-and-advanced-use-cases-with-crewai/" target="_blank">Practical Multi AI Agents with crewAI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Agents</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>7-5 Evaluation and control 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>評估多智慧代理系統的整體效能與可控性。</div>
+            <div class="use-case"><strong>適用情境：</strong>系統優化與風險監控。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://online.stanford.edu/enhancing-your-understanding-agentic-ai-practical-guide" target="_blank">Stanford Online Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>7-6 Emergent behaviors and risks 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>研究多智慧代理交互產生的新興行為及其潛在風險。</div>
+            <div class="use-case"><strong>適用情境：</strong>高階 AI 安全研究。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock Guardrails</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents MOOC</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>7-7 Agent-to-Agent interaction (A2A) 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>設計 Agent 對 Agent 的直接互動介面與協定。</div>
+            <div class="use-case"><strong>適用情境：</strong>機器對機器的自動化交易與協商。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/" target="_blank">AI Agentic Design Patterns with AutoGen</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank">Berkeley Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <h3 id="8-evaluation-safety-governance">8. Evaluation, Safety & Governance</h3>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>8-1 Agent evaluation methods 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握評估 Agent 能力與安全性的方法論與工具。</div>
+            <div class="use-case"><strong>適用情境：</strong>建立 AI 產品驗收標準。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock Evaluations</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>8-2 Safety risks and misuse 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>識別 Agent 可能被濫用的風險與安全漏洞。</div>
+            <div class="use-case"><strong>適用情境：</strong>紅隊測試（Red Teaming）與安全防護。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock Guardrails</a></li>
+                <li>Academic – <a href="https://online.stanford.edu/enhancing-your-understanding-agentic-ai-practical-guide" target="_blank">Stanford Online Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>8-3 Human-in-the-loop systems 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>設計「人類介入」機制以確保關鍵決策的安全性。</div>
+            <div class="use-case"><strong>適用情境：</strong>高風險領域的輔助決策系統。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents MOOC</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>8-4 Governance, accountability, oversight 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>建立 AI 系統的治理架構與問責機制。</div>
+            <div class="use-case"><strong>適用情境：</strong>組織內部的 AI 政策制定。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/fine-tuning-and-reinforcement-learning-for-llms-intro-to-post-training/" target="_blank">Fine-tuning and RL for LLMs</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock Security</a></li>
+                <li>Academic – <a href="https://openlearning.mit.edu/news/explore-world-artificial-intelligence-online-courses-mit" target="_blank">MIT Ethics of Technology</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>8-5 Ethical, legal, societal implications 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>探討 AI 代理對倫理、法律與社會的影響。</div>
+            <div class="use-case"><strong>適用情境：</strong>法規遵循與科技倫理研究。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/generative-ai-for-everyone/" target="_blank">Generative AI for Everyone</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://cs50.harvard.edu/ai/" target="_blank">Harvard CS50 AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>8-6 Enterprise and public-sector governance 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>針對企業與公部門的特殊需求制定治理規範。</div>
+            <div class="use-case"><strong>適用情境：</strong>政府機關與大型企業的 AI 導入策略。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/generative-ai-for-everyone/" target="_blank">Generative AI for Everyone</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS GenAI Developers Certificate</a></li>
+                <li>Academic – <a href="https://www.cmu.edu/online/gai-llm/curriculum/index.html" target="_blank">CMU LLM Certificate</a></li>
+            </ul>
+        </div>
+
+        <h3 id="9-production-capstone">9. Production & Capstone</h3>
+
+        <div class="sub-theme-card level-red">
+            <h4>9-1 System architecture and observability 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>設計具備高可觀測性的生產級 Agent 架構。</div>
+            <div class="use-case"><strong>適用情境：</strong>大型系統維運與效能優化。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://cloud.google.com/blog/topics/training-certifications/new-google-cloud-certification-in-generative-ai" target="_blank">Gen AI Leader Certificate</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank">Berkeley Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>9-2 Scaling and cost optimization 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>優化大規模部署時的運算資源與成本效益。</div>
+            <div class="use-case"><strong>適用情境：</strong>商業化產品運營。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/efficiently-serving-llms/" target="_blank">Efficiently Serving LLMs</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/generative-ai-llm-professional/" target="_blank">Generative AI LLMs Professional</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS GenAI Developers Certificate</a></li>
+                <li>Academic – <a href="https://www.cmu.edu/online/gai-llm/curriculum/index.html" target="_blank">CMU LLM Systems</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-yellow">
+            <h4>9-3 Representative Agentic AI applications 🟡</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>分析與實作具代表性的 Agentic AI 應用案例。</div>
+            <div class="use-case"><strong>適用情境：</strong>專題製作與產品原型開發。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/practical-multi-ai-agents-and-advanced-use-cases-with-crewai/" target="_blank">Practical Multi AI Agents with crewAI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-sg/training/instructor-led-workshops/building-rag-agents-with-llms/" target="_blank">Building RAG Agents with LLMs</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1162" target="_blank">Build GenAI Agents with Vertex AI</a></li>
+                <li>AWS – <a href="https://www.coursera.org/professional-certificates/aws-generative-ai-developers" target="_blank">AWS Bedrock Agents</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/f24" target="_blank">Berkeley LLM Agents MOOC</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>9-4 End-to-end system integration 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>整合前端、後端與 AI 模型，完成端到端的系統開發。</div>
+            <div class="use-case"><strong>適用情境：</strong>完整產品交付。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.deeplearning.ai/short-courses/nvidia-nat-making-agents-reliable/" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://online.stanford.edu/courses/cs329a-self-improving-ai-agents" target="_blank">Stanford CS329A</a></li>
+            </ul>
+        </div>
+
+        <h3 id="10-advanced-topics">10. Advanced Topics</h3>
+
+        <div class="sub-theme-card level-red">
+            <h4>10-1 Coding agents 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>開發能自動撰寫與修正程式碼的 Agent。</div>
+            <div class="use-case"><strong>適用情境：</strong>輔助軟體開發與自動化測試。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-toward-computer-use-with-anthropic/" target="_blank">Building Toward Computer Use</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://developer.nvidia.com/nemo-agent-toolkit" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/sp25" target="_blank">Berkeley Advanced LLM Agents</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>10-2 Computer-use agents 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>實作能操控電腦介面（UI）執行任務的 Agent。</div>
+            <div class="use-case"><strong>適用情境：</strong>RPA（流程自動化）與桌面工作自動化。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-toward-computer-use-with-anthropic/" target="_blank">Building Toward Computer Use</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.skills.google/course_templates/1267" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://rdi.berkeley.edu/agentic-ai/f25" target="_blank">Berkeley Agentic AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>10-3 Emerging protocols and standards 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>追蹤並參與 Agentic AI 領域的新興協定與標準制定。</div>
+            <div class="use-case"><strong>適用情境：</strong>前瞻技術研究與標準化工作。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-toward-computer-use-with-anthropic/" target="_blank">Building Toward Computer Use</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://developer.nvidia.com/nemo-agent-toolkit" target="_blank">NeMo Agent Toolkit</a></li>
+                <li>Google – <a href="https://www.kaggle.com/learn-guide/5-day-agents" target="_blank">Google AI Agents Intensive</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://cs329a.stanford.edu/" target="_blank">Stanford CS329A</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>10-4 World Foundation Models (WFM) 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>了解具備物理世界理解能力的基礎模型。</div>
+            <div class="use-case"><strong>適用情境：</strong>機器人控制與實體世界互動模擬。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/generative-ai-with-llms/" target="_blank">Generative AI with LLMs</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/ai/" target="_blank">AI Agents</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS GenAI Learning</a></li>
+                <li>Academic – <a href="https://introtodeeplearning.com/" target="_blank">MIT 6.S191 Deep Learning</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>10-5 Long-horizon autonomy 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>研究實現長期自主運作 Agent 的關鍵技術挑戰。</div>
+            <div class="use-case"><strong>適用情境：</strong>未來通用人工智慧（AGI）研究方向。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://www.coursera.org/learn/gen-ai-agents-transform-your-organization" target="_blank">Gen AI Agents Course</a></li>
+                <li>AWS – <a href="https://aws.amazon.com/blogs/apn/introducing-the-agentic-ai-technical-learning-plan-in-aws-skill-builder/" target="_blank">AWS Agentic AI Learning</a></li>
+                <li>Academic – <a href="https://cs329a.stanford.edu/" target="_blank">Stanford CS329A Self-Improving AI</a></li>
+            </ul>
+        </div>
+
+        <div class="sub-theme-card level-red">
+            <h4>10-6 Emerging research 🔴</h4>
+            <div class="learning-objective"><strong>學習目標：</strong>跟進 Agentic AI 領域的最新學術發表與前沿技術。</div>
+            <div class="use-case"><strong>適用情境：</strong>學術研究與創新應用開發。</div>
+            <ul>
+                <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/fine-tuning-and-reinforcement-learning-for-llms-intro-to-post-training/" target="_blank">Fine-tuning and RL for LLMs</a></li>
+                <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
+                <li>Nvidia – <a href="https://www.nvidia.com/en-us/learn/certification/agentic-ai-professional/" target="_blank">Agentic AI LLMs Professional</a></li>
+                <li>Google – <a href="https://cloud.google.com/learn/training/machinelearning-ai" target="_blank">Google Cloud ML Training</a></li>
+                <li>AWS – <a href="https://skillbuilder.aws/generative-ai" target="_blank">AWS Skill Builder</a></li>
+                <li>Academic – <a href="https://llmagents-learning.org/sp25" target="_blank">Berkeley Advanced LLM Agents</a></li>
+            </ul>
+        </div>
+
+    </section>
+
+</div>
+
+<div id="back-to-top" title="回到頂部">↑ 回頂部</div>
+
+<script>
+    // Back to top button logic
+    var backToTopButton = document.getElementById("back-to-top");
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    backToTopButton.onclick = function() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</body>
+</html>
