@@ -1,25 +1,164 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAPAI 資源索引</title>
+    <title>NAPAI Resource Index | NAPAI 資源索引</title>
     <style>
-        body { font-family: sans-serif; background: #f4f7f9; text-align: center; padding: 50px; }
-        .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-block; max-width: 500px; }
-        h1 { color: #0056b3; }
-        .btn { display: block; background: #0056b3; color: white; padding: 12px; margin: 10px 0; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .btn:hover { background: #003d7a; }
-        .btn-alt { background: #4a5568; }
+        :root {
+            --primary-color: #0056b3;
+            --primary-hover: #003d7a;
+            --secondary-color: #4a5568;
+            --bg-color: #f4f7f9;
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+            background: var(--bg-color); 
+            text-align: center; 
+            padding: 50px 20px; 
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Language Toggle Logic */
+        body.lang-en .zh-text { display: none !important; }
+        body.lang-zh .en-text { display: none !important; }
+
+        .lang-switch-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .lang-btn {
+            background: white;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+            display: inline-block; 
+            max-width: 500px; 
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        h1 { 
+            color: var(--primary-color); 
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+
+        .btn { 
+            display: block; 
+            background: var(--primary-color); 
+            color: white; 
+            padding: 15px; 
+            margin: 15px 0; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            transition: background 0.2s;
+        }
+
+        .btn:hover { 
+            background: var(--primary-hover); 
+        }
+
+        .btn-alt { 
+            background: var(--secondary-color); 
+        }
+
+        .btn-alt:hover {
+            background: #2d3748;
+        }
+
+        hr {
+            margin-top: 30px;
+            border: 0;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer-note {
+            font-size: 0.8rem;
+            color: #a0aec0;
+            margin-top: 20px;
+        }
     </style>
 </head>
-<body>
-    <div class="card">
-        <h1>NAPAI Agentic AI 課程地圖</h1>
-        <p>請選擇您偏好的查看方式：</p>
-        <a href="napai-agentic-ai-course-map-v2.1.html" class="btn">🌐 線上互動版 (HTML)</a>
-        <a href="napai-agentic-ai-course-map-v2.1.md" class="btn btn-alt">📄 原始碼文件 (Markdown)</a>
-        <hr>
+<body class="lang-en"> <div class="lang-switch-container">
+        <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">Switch to Chinese (切換至繁體中文)</button>
     </div>
+
+    <div class="card">
+        <h1>
+            <span class="en-text">NAPAI Agentic AI Course Map</span>
+            <span class="zh-text">NAPAI Agentic AI 課程地圖</span>
+        </h1>
+        
+        <p>
+            <span class="en-text">Please select your preferred viewing format:</span>
+            <span class="zh-text">請選擇您偏好的查看方式：</span>
+        </p>
+        
+        <a href="napai-agentic-ai-course-map-v2.1.html" class="btn">
+            <span class="en-text">🌐 Interactive Online Version (HTML)</span>
+            <span class="zh-text">🌐 線上互動版 (HTML)</span>
+        </a>
+        
+        <a href="napai-agentic-ai-course-map-v2.1.md" class="btn btn-alt">
+            <span class="en-text">📄 Source Code Document (Markdown)</span>
+            <span class="zh-text">📄 原始碼文件 (Markdown)</span>
+        </a>
+        
+        <hr>
+
+        <div class="footer-note">
+            <span class="en-text">National Agentic & Physical AI Project Office (NAPAI)</span>
+            <span class="zh-text">國家智慧代理與實體AI機器人課程推動計畫辦公室 (NAPAI)</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            const btn = document.getElementById('langBtn');
+            
+            if (body.classList.contains('lang-en')) {
+                // Switch to Chinese
+                body.classList.remove('lang-en');
+                body.classList.add('lang-zh');
+                btn.textContent = "Switch to English";
+                document.documentElement.lang = "zh-TW";
+            } else {
+                // Switch to English
+                body.classList.remove('lang-zh');
+                body.classList.add('lang-en');
+                btn.textContent = "Switch to Chinese (切換至繁體中文)";
+                document.documentElement.lang = "en";
+            }
+        }
+    </script>
 </body>
 </html>

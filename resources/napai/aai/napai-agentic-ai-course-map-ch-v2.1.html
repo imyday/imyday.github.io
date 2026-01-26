@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAPAI Agentic AI Course Map v2.1</title>
+    <title>NAPAI Agentic AI 課程地圖 v2.1</title>
     <style>
         :root {
             --primary-color: #0056b3;
@@ -27,42 +27,12 @@
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
-            transition: all 0.3s ease;
         }
-
-        /* Language Switching Logic */
-        body.lang-en .zh-text { display: none !important; }
-        body.lang-zh .en-text { display: none !important; }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-        }
-
-        /* Language Toggle Button */
-        .lang-switch-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-        }
-
-        .lang-btn {
-            background: white;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-
-        .lang-btn:hover {
-            background: var(--primary-color);
-            color: white;
         }
 
         /* Header Styles */
@@ -73,7 +43,6 @@
             margin-bottom: 30px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             text-align: center;
-            position: relative;
         }
 
         h1 {
@@ -239,50 +208,19 @@
             h1 { font-size: 1.8rem; }
             section { padding: 20px; }
             .meta-info { padding: 10px; }
-            .lang-switch-container { top: 10px; right: 10px; }
         }
     </style>
 </head>
-<body class="lang-en"> <header>
-    <div class="lang-switch-container">
-        <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">Switch to Chinese (切換至繁體中文)</button>
-    </div>
+<body>
+
+<header>
     <div class="container">
-        <h1>
-            <span class="en-text">NAPAI Agentic AI Course Map v2.1</span>
-            <span class="zh-text">NAPAI Agentic AI 課程地圖 v2.1</span>
-        </h1>
+        <h1>NAPAI Agentic AI 課程地圖 v2.1</h1>
         <div class="meta-info">
-            <p>
-                <span class="meta-label">
-                    <span class="en-text">Last Updated:</span>
-                    <span class="zh-text">更新日期：</span>
-                </span>
-                2026-01-25
-            </p>
-            <p>
-                <span class="meta-label">
-                    <span class="en-text">Organizer:</span>
-                    <span class="zh-text">編制單位：</span>
-                </span>
-                <span class="en-text">National Agentic & Physical AI Project Office (NAPAI)</span>
-                <span class="zh-text">國家智慧代理與實體AI機器人課程推動計畫辦公室（NAPAI）</span>
-            </p>
-            <p>
-                <span class="meta-label">
-                    <span class="en-text">Target Audience:</span>
-                    <span class="zh-text">適用對象：</span>
-                </span>
-                <span class="en-text">Educators, AI Learners, AI Developers, Policy Makers</span>
-                <span class="zh-text">教育工作者、AI 學習者、AI 開發者、政策規劃者</span>
-            </p>
-            <p>
-                <span class="meta-label">
-                    <span class="en-text">Latest Online Version:</span>
-                    <span class="zh-text">線上最新版：</span>
-                </span>
-                <a href="https://napaincu.github.io/" target="_blank">https://napaincu.github.io/</a>
-            </p>
+            <p><span class="meta-label">更新日期：</span>2026-01-25</p>
+            <p><span class="meta-label">編制單位：</span>國家智慧代理與實體AI機器人課程推動計畫辦公室（NAPAI）</p>
+            <p><span class="meta-label">適用對象：</span>教育工作者、AI 學習者、AI 開發者、政策規劃者</p>
+            <p><span class="meta-label">線上最新版：</span><a href="https://napaincu.github.io/" target="_blank">https://napaincu.github.io/</a></p>
         </div>
     </div>
 </header>
@@ -290,113 +228,60 @@
 <div class="container">
 
     <section id="purpose">
-        <h2>
-            <span class="en-text">1. Purpose & Scope</span>
-            <span class="zh-text">一、課程地圖說明（Purpose & Scope）</span>
-        </h2>
-        <div class="en-text">
-            <p>This course map provides a systematic, scalable, and internationally aligned <strong>Agentic AI learning path</strong>, assisting learners in progressing from foundational skills to multi-agent systems, governance, and practical deployment.</p>
-            <p><strong>Design Principles:</strong></p>
-            <ul>
-                <li>Progression: Foundations -> Core Concepts -> System Implementation -> Governance & Risk -> Industrial Application</li>
-                <li>Each sub-theme includes at least:
-                    <ul>
-                        <li>One international education platform</li>
-                        <li>One cloud or tool platform</li>
-                        <li>One academic or research source</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="zh-text">
-            <p>本課程地圖提供一套系統化、可擴充、與國際接軌的 <strong>Agentic AI 學習路徑</strong>，協助學習者由基礎能力逐步進入多代理系統、治理與實務部署。</p>
-            <p><strong>設計原則：</strong></p>
-            <ul>
-                <li>由「基礎能力 -> 核心概念 -> 系統實作 -> 治理與風險 -> 產業應用」逐層遞進</li>
-                <li>每一子主題至少搭配：
-                    <ul>
-                        <li>一個國際知名教育平台</li>
-                        <li>一個雲端或工具平台</li>
-                        <li>一個學術或研究型來源</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+        <h2>一、課程地圖說明（Purpose & Scope）</h2>
+        <p>本課程地圖提供一套系統化、可擴充、與國際接軌的 <strong>Agentic AI 學習路徑</strong>，協助學習者由基礎能力逐步進入多代理系統、治理與實務部署。</p>
+        <p><strong>設計原則：</strong></p>
+        <ul>
+            <li>由「基礎能力 -> 核心概念 -> 系統實作 -> 治理與風險 -> 產業應用」逐層遞進</li>
+            <li>每一子主題至少搭配：
+                <ul>
+                    <li>一個國際知名教育平台</li>
+                    <li>一個雲端或工具平台</li>
+                    <li>一個學術或研究型來源</li>
+                </ul>
+            </li>
+        </ul>
     </section>
 
     <section id="methodology">
-        <h2>
-            <span class="en-text">2. Methodology</span>
-            <span class="zh-text">二、資源選擇方法論（Methodology）</span>
-        </h2>
-        <div class="en-text">
-            <p>Resources in this map are selected based on the following criteria:</p>
-            <ol>
-                <li><strong>Trustworthiness</strong> - Sources from reputable international institutions (e.g., DeepLearning.AI, Microsoft, Nvidia, Google, AWS, Stanford, Harvard, MIT, CMU, Berkeley).</li>
-                <li><strong>Authoritativeness</strong> - Official training resources, academic courses, or mainstream platform learning paths widely cited by academia or industry.</li>
-                <li><strong>Expertise</strong> - Content with technical depth or practical orientation, suitable for actual system development or policy application.</li>
-                <li><strong>Experience</strong> - Proven feasibility in teaching or projects, allowing for rapid adoption in educational settings.</li>
-            </ol>
-        </div>
-        <div class="zh-text">
-            <p>本課程地圖所列資源係依下列準則篩選：</p>
-            <ol>
-                <li><strong>可信度（Trustworthiness）</strong> - 來源為具國際聲譽之機構（如：DeepLearning.AI、Microsoft、Nvidia、Google、AWS、Stanford、Harvard、MIT、CMU、Berkeley 等），且具明確作者或單位背書。</li>
-                <li><strong>權威性（Authoritativeness）</strong> - 為官方訓練資源、學術課程、或主流平台學習路徑，並被學界或業界廣泛引用。</li>
-                <li><strong>專業度（Expertise）</strong> - 課程內容具技術深度或實務導向，可對應實際系統開發或政策應用。</li>
-                <li><strong>實用性（Experience）</strong> - 經實際教學或專案驗證可行，可快速導入教育場域。</li>
-            </ol>
-        </div>
+        <h2>二、資源選擇方法論（Methodology）</h2>
+        <p>本課程地圖所列資源係依下列準則篩選：</p>
+        <ol>
+            <li><strong>可信度（Trustworthiness）</strong> - 來源為具國際聲譽之機構（如：DeepLearning.AI、Microsoft、Nvidia、Google、AWS、Stanford、Harvard、MIT、CMU、Berkeley 等），且具明確作者或單位背書。</li>
+            <li><strong>權威性（Authoritativeness）</strong> - 為官方訓練資源、學術課程、或主流平台學習路徑，並被學界或業界廣泛引用。</li>
+            <li><strong>專業度（Expertise）</strong> - 課程內容具技術深度或實務導向，可對應實際系統開發或政策應用。</li>
+            <li><strong>實用性（Experience）</strong> - 經實際教學或專案驗證可行，可快速導入教育場域。</li>
+        </ol>
     </section>
 
     <section id="toc">
-        <h2>
-            <span class="en-text">3. Table of Contents</span>
-            <span class="zh-text">三、快速導覽（Table of Contents）</span>
-        </h2>
+        <h2>三、快速導覽（Table of Contents）</h2>
         <ul class="toc-list">
-            <li><a href="#1-foundations">1. Foundations <span class="zh-text">(基礎能力)</span></a></li>
-            <li><a href="#2-llm-fundamentals">2. LLM Fundamentals <span class="zh-text">(大型語言模型基礎)</span></a></li>
-            <li><a href="#3-core-agent-concepts">3. Core Agent Concepts <span class="zh-text">(核心 Agent 概念)</span></a></li>
-            <li><a href="#4-tool-use-function-calling">4. Tool Use & Function Calling <span class="zh-text">(工具使用與函數呼叫)</span></a></li>
-            <li><a href="#5-memory-rag-systems">5. Memory & RAG Systems <span class="zh-text">(記憶與檢索增強生成)</span></a></li>
-            <li><a href="#6-frameworks-implementation">6. Frameworks & Implementation <span class="zh-text">(框架與實作)</span></a></li>
-            <li><a href="#7-multi-agent-systems">7. Multi-Agent Systems <span class="zh-text">(多智慧代理系統)</span></a></li>
-            <li><a href="#8-evaluation-safety-governance">8. Evaluation, Safety & Governance <span class="zh-text">(評估、安全與治理)</span></a></li>
-            <li><a href="#9-production-capstone">9. Production & Capstone <span class="zh-text">(生產與專題)</span></a></li>
-            <li><a href="#10-advanced-topics">10. Advanced Topics <span class="zh-text">(進階主題)</span></a></li>
+            <li><a href="#1-foundations">1. Foundations (基礎能力)</a></li>
+            <li><a href="#2-llm-fundamentals">2. LLM Fundamentals (大型語言模型基礎)</a></li>
+            <li><a href="#3-core-agent-concepts">3. Core Agent Concepts (核心 Agent 概念)</a></li>
+            <li><a href="#4-tool-use-function-calling">4. Tool Use & Function Calling (工具使用與函數呼叫)</a></li>
+            <li><a href="#5-memory-rag-systems">5. Memory & RAG Systems (記憶與檢索增強生成)</a></li>
+            <li><a href="#6-frameworks-implementation">6. Frameworks & Implementation (框架與實作)</a></li>
+            <li><a href="#7-multi-agent-systems">7. Multi-Agent Systems (多智慧代理系統)</a></li>
+            <li><a href="#8-evaluation-safety-governance">8. Evaluation, Safety & Governance (評估、安全與治理)</a></li>
+            <li><a href="#9-production-capstone">9. Production & Capstone (生產與專題)</a></li>
+            <li><a href="#10-advanced-topics">10. Advanced Topics (進階主題)</a></li>
         </ul>
     </section>
 
     <section>
-        <h2>
-            <span class="en-text">4. Course Theme Map</span>
-            <span class="zh-text">四、課程主題地圖（Course Map）</span>
-        </h2>
+        <h2>四、課程主題地圖（Course Map）</h2>
         <div class="legend">
-            <strong>
-                <span class="en-text">Legend: </span>
-                <span class="zh-text">標註說明：</span>
-            </strong> 
-            🟢 <span class="en-text">Beginner</span><span class="zh-text">入門</span>　
-            🟡 <span class="en-text">Intermediate</span><span class="zh-text">進階</span>　
-            🔴 <span class="en-text">Advanced</span><span class="zh-text">專業</span>
+            <strong>標註說明：</strong> 🟢 入門　🟡 進階　🔴 專業
         </div>
 
         <h3 id="1-foundations">1. Foundations</h3>
 
         <div class="sub-theme-card level-green">
             <h4>1-1 Python programming 🟢</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Master Python basics and environment setup required for AI development.</span>
-                <span class="zh-text">掌握開發 AI 應用所需的 Python 程式語言基礎與環境架設。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Writing automation scripts and data processing.</span>
-                <span class="zh-text">撰寫自動化腳本、處理數據資料。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握開發 AI 應用所需的 Python 程式語言基礎與環境架設。</div>
+            <div class="use-case"><strong>適用情境：</strong>撰寫自動化腳本、處理數據資料。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-python-for-beginners/" target="_blank">AI Python for Beginners</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
@@ -409,16 +294,8 @@
 
         <div class="sub-theme-card level-green">
             <h4>1-2 API integration and data handling 🟢</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Learn to call LLM APIs and handle input/output data formats (e.g., JSON).</span>
-                <span class="zh-text">學會呼叫 LLM API 並處理輸入輸出的資料格式（JSON 等）。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Developing simple chatbots, integrating third-party services.</span>
-                <span class="zh-text">開發簡易聊天機器人、串接第三方服務。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>學會呼叫 LLM API 並處理輸入輸出的資料格式（JSON 等）。</div>
+            <div class="use-case"><strong>適用情境：</strong>開發簡易聊天機器人、串接第三方服務。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-systems-with-chatgpt/" target="_blank">Building Systems with ChatGPT API</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
@@ -431,16 +308,8 @@
 
         <div class="sub-theme-card level-green">
             <h4>1-3 Machine Learning fundamentals 🟢</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Understand core machine learning concepts, algorithms, and principles.</span>
-                <span class="zh-text">理解機器學習的核心概念、演算法與運作原理。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Data analysis, building predictive models.</span>
-                <span class="zh-text">數據分析、預測模型建立。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>理解機器學習的核心概念、演算法與運作原理。</div>
+            <div class="use-case"><strong>適用情境：</strong>數據分析、預測模型建立。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/machine-learning-specialization/" target="_blank">Machine Learning Specialization</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">AI For Beginners</a></li>
@@ -453,16 +322,8 @@
 
         <div class="sub-theme-card level-green">
             <h4>1-4 Model training, evaluation, and bias 🟢</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Learn the model training process, evaluation metrics, and how to identify bias.</span>
-                <span class="zh-text">學習模型訓練流程、成效評估指標及如何識別偏差。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Optimizing model accuracy, ensuring AI system fairness.</span>
-                <span class="zh-text">優化模型準確度、確保 AI 系統公平性。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>學習模型訓練流程、成效評估指標及如何識別偏差。</div>
+            <div class="use-case"><strong>適用情境：</strong>優化模型準確度、確保 AI 系統公平性。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/machine-learning-specialization/" target="_blank">Machine Learning Specialization</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">AI For Beginners</a></li>
@@ -475,16 +336,8 @@
 
         <div class="sub-theme-card level-green">
             <h4>1-5 Essential math for AI 🟢</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Strengthen AI math foundations in linear algebra, calculus, and probability.</span>
-                <span class="zh-text">補強線性代數、微積分與機率統計等 AI 數學基礎。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Reading AI papers, understanding algorithm logic.</span>
-                <span class="zh-text">研讀 AI 論文、理解演算法底層邏輯。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>補強線性代數、微積分與機率統計等 AI 數學基礎。</div>
+            <div class="use-case"><strong>適用情境：</strong>研讀 AI 論文、理解演算法底層邏輯。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/mathematics-for-machine-learning-and-data-science-specialization/" target="_blank">Mathematics for ML Specialization</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">AI For Beginners</a></li>
@@ -499,16 +352,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>2-1 Foundations of large language models 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Understand LLM history, capabilities, and fundamental limitations.</span>
-                <span class="zh-text">理解 LLM 的發展歷史、能力範疇與基本限制。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Evaluating LLM feasibility and selecting appropriate models.</span>
-                <span class="zh-text">評估導入 LLM 的可行性與選擇合適模型。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>理解 LLM 的發展歷史、能力範疇與基本限制。</div>
+            <div class="use-case"><strong>適用情境：</strong>評估導入 LLM 的可行性與選擇合適模型。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/generative-ai-with-llms/" target="_blank">Generative AI with LLMs</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
@@ -521,16 +366,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>2-2 Transformer architecture 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Deeply understand Transformer architecture and Attention mechanisms.</span>
-                <span class="zh-text">深入理解 Transformer 架構及其 Attention 機制。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Reading technical literature, optimizing model architecture.</span>
-                <span class="zh-text">閱讀技術文獻、進行模型架構優化。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>深入理解 Transformer 架構及其 Attention 機制。</div>
+            <div class="use-case"><strong>適用情境：</strong>閱讀技術文獻、進行模型架構優化。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/how-transformer-llms-work/" target="_blank">How Transformer LLMs Work</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
@@ -543,16 +380,8 @@
 
         <div class="sub-theme-card level-green">
             <h4>2-3 Prompt engineering 🟢</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Master prompt design techniques to guide models for high-quality output.</span>
-                <span class="zh-text">掌握提示詞設計技巧以引導模型產出高品質結果。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Optimizing user interaction, improving task completion rates.</span>
-                <span class="zh-text">優化使用者互動體驗、提升任務完成率。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握提示詞設計技巧以引導模型產出高品質結果。</div>
+            <div class="use-case"><strong>適用情境：</strong>優化使用者互動體驗、提升任務完成率。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" target="_blank">ChatGPT Prompt Engineering</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
@@ -565,16 +394,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>2-4 Model adaptation and tuning 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Learn fine-tuning techniques to adapt models to domain-specific tasks.</span>
-                <span class="zh-text">學習微調（Fine-tuning）技術以適應特定領域任務。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Creating specialized models for law, medicine, etc.</span>
-                <span class="zh-text">建立法律、醫療等專業領域的專屬模型。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>學習微調（Fine-tuning）技術以適應特定領域任務。</div>
+            <div class="use-case"><strong>適用情境：</strong>建立法律、醫療等專業領域的專屬模型。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/finetuning-large-language-models/" target="_blank">Finetuning Large Language Models</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
@@ -587,16 +408,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>2-5 Evaluation of LLM behavior 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Establish frameworks to test LLM accuracy and consistency.</span>
-                <span class="zh-text">建立評估框架以測試 LLM 的準確性與一致性。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Quality Assurance (QA) and benchmarking before deployment.</span>
-                <span class="zh-text">模型上線前的品質保證（QA）與基準測試。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>建立評估框架以測試 LLM 的準確性與一致性。</div>
+            <div class="use-case"><strong>適用情境：</strong>模型上線前的品質保證（QA）與基準測試。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/" target="_blank">Evaluating and Debugging GenAI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">Generative AI for Beginners</a></li>
@@ -609,16 +422,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>2-6 Role of LLMs in agent systems 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Understand the role of LLMs as the "brain" for decision-making in agent systems.</span>
-                <span class="zh-text">理解 LLM 在代理系統中作為「大腦」的決策角色。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Designing agents capable of autonomous task planning.</span>
-                <span class="zh-text">設計能夠自主規劃任務的 Agent 系統。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>理解 LLM 在代理系統中作為「大腦」的決策角色。</div>
+            <div class="use-case"><strong>適用情境：</strong>設計能夠自主規劃任務的 Agent 系統。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -633,16 +438,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>3-1 What defines an agent 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Define the differences between Agents and Chatbots and their autonomous traits.</span>
-                <span class="zh-text">明確定義 Agent 與傳統 Chatbot 的差異及其自主性特徵。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Agentic AI product definition and architecture planning.</span>
-                <span class="zh-text">Agentic AI 產品定義與架構規劃。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>明確定義 Agent 與傳統 Chatbot 的差異及其自主性特徵。</div>
+            <div class="use-case"><strong>適用情境：</strong>Agentic AI 產品定義與架構規劃。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -655,16 +452,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>3-2 Agent architectures 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Master common agent patterns like ReAct and Chain of Thought.</span>
-                <span class="zh-text">掌握 ReAct、Chain of Thought 等常見 Agent 架構設計模式。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">System architecture design and selection.</span>
-                <span class="zh-text">系統架構設計與選型。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握 ReAct、Chain of Thought 等常見 Agent 架構設計模式。</div>
+            <div class="use-case"><strong>適用情境：</strong>系統架構設計與選型。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/" target="_blank">AI Agentic Design Patterns with AutoGen</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -677,16 +466,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>3-3 Reasoning and decision-making 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Enhance agent logical reasoning and multi-step decision capabilities.</span>
-                <span class="zh-text">強化 Agent 的邏輯推論與多步驟決策能力。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Handling complex, non-linear task flows.</span>
-                <span class="zh-text">處理複雜且非線性的任務流程。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>強化 Agent 的邏輯推論與多步驟決策能力。</div>
+            <div class="use-case"><strong>適用情境：</strong>處理複雜且非線性的任務流程。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -699,16 +480,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>3-4 Planning mechanisms 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Learn task decomposition and execution path planning for agents.</span>
-                <span class="zh-text">學習如何讓 Agent 進行任務拆解與執行路徑規劃。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Automated project management, complex itinerary planning.</span>
-                <span class="zh-text">專案管理自動化、複雜行程規劃。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>學習如何讓 Agent 進行任務拆解與執行路徑規劃。</div>
+            <div class="use-case"><strong>適用情境：</strong>專案管理自動化、複雜行程規劃。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -721,16 +494,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>3-5 Feedback and self-correction 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Implement agent self-reflection and error correction mechanisms.</span>
-                <span class="zh-text">實作 Agent 的自我反思與錯誤修正機制。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Improving system robustness and fault tolerance.</span>
-                <span class="zh-text">提升系統的穩健性與容錯率。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>實作 Agent 的自我反思與錯誤修正機制。</div>
+            <div class="use-case"><strong>適用情境：</strong>提升系統的穩健性與容錯率。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -743,16 +508,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>3-6 Agent limitations and failure modes 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Identify common failures like hallucinations and loops.</span>
-                <span class="zh-text">識別 Agent 的幻覺、迴圈錯誤等常見失效模式。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Risk assessment and safeguard design.</span>
-                <span class="zh-text">風險評估與防護機制設計。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>識別 Agent 的幻覺、迴圈錯誤等常見失效模式。</div>
+            <div class="use-case"><strong>適用情境：</strong>風險評估與防護機制設計。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -765,16 +522,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>3-7 Long-horizon autonomy (conceptual) 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Explore challenges in long-duration tasks and autonomy.</span>
-                <span class="zh-text">探討 Agent 執行長週期任務的挑戰與解決方案。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Autonomous research assistants, long-term monitoring.</span>
-                <span class="zh-text">自主研究助理、長期專案監控。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>探討 Agent 執行長週期任務的挑戰與解決方案。</div>
+            <div class="use-case"><strong>適用情境：</strong>自主研究助理、長期專案監控。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -789,16 +538,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>4-1 Tool-augmented agent design 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Design agents that effectively use external tools.</span>
-                <span class="zh-text">設計能有效利用外部工具的 Agent 系統。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Extending LLM capabilities (calculators, search).</span>
-                <span class="zh-text">擴充 LLM 能力（如計算機、搜尋引擎）。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>設計能有效利用外部工具的 Agent 系統。</div>
+            <div class="use-case"><strong>適用情境：</strong>擴充 LLM 能力（如計算機、搜尋引擎）。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/" target="_blank">Functions, Tools and Agents with LangChain</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -811,16 +552,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>4-2 Function calling mechanisms 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Deep dive into function calling details and parameter passing.</span>
-                <span class="zh-text">深入理解函數呼叫的技術細節與參數傳遞。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Precise API interaction control.</span>
-                <span class="zh-text">精確控制 API 互動。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>深入理解函數呼叫的技術細節與參數傳遞。</div>
+            <div class="use-case"><strong>適用情境：</strong>精確控制 API 互動。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/functions-tools-agents-langchain/" target="_blank">Functions, Tools and Agents with LangChain</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -833,16 +566,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>4-3 Custom tool development 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Develop custom tools for agents to meet specific business needs.</span>
-                <span class="zh-text">開發客製化工具供 Agent 調用以滿足特定業務需求。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Enterprise internal system integration.</span>
-                <span class="zh-text">企業內部系統整合。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>開發客製化工具供 Agent 調用以滿足特定業務需求。</div>
+            <div class="use-case"><strong>適用情境：</strong>企業內部系統整合。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -855,16 +580,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>4-4 Tool orchestration and workflows 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Learn to orchestrate workflows involving multiple tools.</span>
-                <span class="zh-text">學習編排多工具協作的流程與邏輯。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Automating complex business processes.</span>
-                <span class="zh-text">複雜業務流程自動化。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>學習編排多工具協作的流程與邏輯。</div>
+            <div class="use-case"><strong>適用情境：</strong>複雜業務流程自動化。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -877,16 +594,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>4-5 Reliability and safety 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Ensure safe tool execution, preventing misuse or attacks.</span>
-                <span class="zh-text">確保工具調用的安全性，防止誤操作或惡意攻擊。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Financial transactions, database writes, high-risk ops.</span>
-                <span class="zh-text">金融交易、資料庫寫入等高風險操作。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>確保工具調用的安全性，防止誤操作或惡意攻擊。</div>
+            <div class="use-case"><strong>適用情境：</strong>金融交易、資料庫寫入等高風險操作。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -899,16 +608,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>4-6 Observability and debugging 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Establish monitoring to track agent behavior and tool usage.</span>
-                <span class="zh-text">建立監控機制以追蹤 Agent 的行為與工具使用狀況。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">System maintenance and error troubleshooting.</span>
-                <span class="zh-text">系統維運與錯誤排查。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>建立監控機制以追蹤 Agent 的行為與工具使用狀況。</div>
+            <div class="use-case"><strong>適用情境：</strong>系統維運與錯誤排查。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/evaluating-debugging-generative-ai/" target="_blank">Evaluating and Debugging GenAI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -923,16 +624,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>5-1 Memory architectures 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Understand short-term and long-term memory designs in agents.</span>
-                <span class="zh-text">理解短期與長期記憶在 Agent 系統中的設計架構。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Maintaining conversation coherence and context.</span>
-                <span class="zh-text">維持對話連貫性與上下文理解。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>理解短期與長期記憶在 Agent 系統中的設計架構。</div>
+            <div class="use-case"><strong>適用情境：</strong>維持對話連貫性與上下文理解。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/retrieval-augmented-generation-rag/" target="_blank">RAG Course</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -945,16 +638,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>5-2 Memory representation and storage 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Learn implementation of vector databases and memory storage.</span>
-                <span class="zh-text">學習向量資料庫與記憶儲存的技術實作。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Knowledge base construction and retrieval optimization.</span>
-                <span class="zh-text">知識庫建置與檢索優化。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>學習向量資料庫與記憶儲存的技術實作。</div>
+            <div class="use-case"><strong>適用情境：</strong>知識庫建置與檢索優化。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/" target="_blank">Building and Evaluating Advanced RAG</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -967,16 +652,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>5-3 Retrieval-Augmented Generation 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Master RAG technology to enhance agent knowledge acquisition.</span>
-                <span class="zh-text">掌握 RAG 技術以增強 Agent 的知識獲取能力。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Enterprise QA systems, real-time information retrieval.</span>
-                <span class="zh-text">企業知識問答、即時資訊查詢。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握 RAG 技術以增強 Agent 的知識獲取能力。</div>
+            <div class="use-case"><strong>適用情境：</strong>企業知識問答、即時資訊查詢。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/retrieval-augmented-generation-rag/" target="_blank">RAG Course</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -989,16 +666,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>5-4 State and context management 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Effectively manage conversation state and context window limits.</span>
-                <span class="zh-text">有效管理對話狀態與上下文窗口限制。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Handling long conversations and complex task states.</span>
-                <span class="zh-text">長對話處理與複雜任務狀態追蹤。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>有效管理對話狀態與上下文窗口限制。</div>
+            <div class="use-case"><strong>適用情境：</strong>長對話處理與複雜任務狀態追蹤。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/" target="_blank">LangChain: Chat with Your Data</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1011,16 +680,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>5-5 Reliability and governance 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Ensure RAG accuracy and manage citation sources.</span>
-                <span class="zh-text">確保 RAG 系統的資訊準確性與引用來源管控。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Preventing misinformation, knowledge base version control.</span>
-                <span class="zh-text">避免生成錯誤資訊、知識庫版控。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>確保 RAG 系統的資訊準確性與引用來源管控。</div>
+            <div class="use-case"><strong>適用情境：</strong>避免生成錯誤資訊、知識庫版控。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/" target="_blank">Building and Evaluating Advanced RAG</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1033,16 +694,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>5-6 Privacy and data governance 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Implement data privacy and access control in RAG systems.</span>
-                <span class="zh-text">在 RAG 系統中落實資料隱私與存取權限控管。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Handling sensitive personal data or confidential documents.</span>
-                <span class="zh-text">處理敏感個資或機密文件。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>在 RAG 系統中落實資料隱私與存取權限控管。</div>
+            <div class="use-case"><strong>適用情境：</strong>處理敏感個資或機密文件。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/" target="_blank">Building and Evaluating Advanced RAG</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1057,16 +710,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>6-1 Agent framework ecosystem 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Understand major agent frameworks (LangChain, AutoGen) and ecosystems.</span>
-                <span class="zh-text">認識主流 Agent 開發框架（LangChain, AutoGen 等）及其生態系。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Tech stack selection and tool evaluation.</span>
-                <span class="zh-text">技術選型與開發工具評估。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>認識主流 Agent 開發框架（LangChain, AutoGen 等）及其生態系。</div>
+            <div class="use-case"><strong>適用情境：</strong>技術選型與開發工具評估。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/" target="_blank">AI Agentic Design Patterns with AutoGen</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1079,16 +724,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>6-2 Core agent components 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Analyze core components (Profile, Memory, Planner) implementation.</span>
-                <span class="zh-text">解析框架中的核心元件（Profile, Memory, Planner）實作方式。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">In-depth custom development.</span>
-                <span class="zh-text">深入客製化開發。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>解析框架中的核心元件（Profile, Memory, Planner）實作方式。</div>
+            <div class="use-case"><strong>適用情境：</strong>深入客製化開發。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1101,16 +738,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>6-3 Build vs framework trade-offs 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Evaluate trade-offs between custom-built systems vs. using frameworks.</span>
-                <span class="zh-text">評估自建系統與使用既有框架的優缺點與成本效益。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Initial technical decision-making for projects.</span>
-                <span class="zh-text">專案初期的技術決策。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>評估自建系統與使用既有框架的優缺點與成本效益。</div>
+            <div class="use-case"><strong>適用情境：</strong>專案初期的技術決策。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1123,16 +752,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>6-4 Custom agent loop implementation 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Implement agent control loops for precise behavioral control.</span>
-                <span class="zh-text">實作 Agent 的核心控制迴圈（Control Loop）以精確掌控行為。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Scenarios requiring highly customized logic.</span>
-                <span class="zh-text">需要高度客製化行為邏輯的場景。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>實作 Agent 的核心控制迴圈（Control Loop）以精確掌控行為。</div>
+            <div class="use-case"><strong>適用情境：</strong>需要高度客製化行為邏輯的場景。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1145,16 +766,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>6-5 Engineering best practices 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Master prompt versioning, testing, and CI/CD practices.</span>
-                <span class="zh-text">掌握 Prompt 版本管理、測試與 CI/CD 等工程化實踐。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Team collaboration and system maintenance.</span>
-                <span class="zh-text">團隊協作開發與系統維護。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握 Prompt 版本管理、測試與 CI/CD 等工程化實踐。</div>
+            <div class="use-case"><strong>適用情境：</strong>團隊協作開發與系統維護。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1167,16 +780,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>6-6 Deployment readiness 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Assess performance, cost, and security before deployment.</span>
-                <span class="zh-text">評估系統部署前的效能、成本與安全準備度。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Final checklist before product launch.</span>
-                <span class="zh-text">產品上線前的最終檢核。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>評估系統部署前的效能、成本與安全準備度。</div>
+            <div class="use-case"><strong>適用情境：</strong>產品上線前的最終檢核。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1189,16 +794,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>6-7 Interface and protocol standards 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Understand communication protocols and interface standards for agents.</span>
-                <span class="zh-text">了解 Agent 間通訊的協定標準與介面規範。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Cross-system integration and interoperability.</span>
-                <span class="zh-text">跨系統整合與互操作性設計。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>了解 Agent 間通訊的協定標準與介面規範。</div>
+            <div class="use-case"><strong>適用情境：</strong>跨系統整合與互操作性設計。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-toward-computer-use-with-anthropic/" target="_blank">Building Toward Computer Use</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1213,16 +810,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>7-1 Architectures: hierarchical, collaborative, swarm 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Master multi-agent architectures (hierarchical, swarm, etc.).</span>
-                <span class="zh-text">掌握階層式、協作式與蜂群式等多智慧代理系統架構。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Solving large-scale tasks too complex for single agents.</span>
-                <span class="zh-text">解決單一 Agent 無法處理的複雜大規模任務。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握階層式、協作式與蜂群式等多智慧代理系統架構。</div>
+            <div class="use-case"><strong>適用情境：</strong>解決單一 Agent 無法處理的複雜大規模任務。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/" target="_blank">Multi AI Agent Systems with crewAI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1235,16 +824,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>7-2 Agent communication protocols 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Design message passing and communication mechanisms between agents.</span>
-                <span class="zh-text">設計 Agent 之間的訊息傳遞與溝通機制。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Ensuring efficiency and correctness in multi-agent collaboration.</span>
-                <span class="zh-text">確保多智慧代理協作的效率與正確性。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>設計 Agent 之間的訊息傳遞與溝通機制。</div>
+            <div class="use-case"><strong>適用情境：</strong>確保多智慧代理協作的效率與正確性。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1257,16 +838,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>7-3 Coordination and decision-making 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Implement multi-agent coordination and conflict resolution strategies.</span>
-                <span class="zh-text">實作多智慧代理的協調機制與衝突解決策略。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Resource allocation and joint decision-making.</span>
-                <span class="zh-text">資源分配與共同決策。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>實作多智慧代理的協調機制與衝突解決策略。</div>
+            <div class="use-case"><strong>適用情境：</strong>資源分配與共同決策。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1279,16 +852,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>7-4 Joint planning and execution 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Enable agents to jointly create plans and divide execution tasks.</span>
-                <span class="zh-text">讓多個 Agent 共同制定計畫並分工執行。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Complex project execution and team simulation.</span>
-                <span class="zh-text">複雜專案執行與團隊模擬。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>讓多個 Agent 共同制定計畫並分工執行。</div>
+            <div class="use-case"><strong>適用情境：</strong>複雜專案執行與團隊模擬。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/practical-multi-ai-agents-and-advanced-use-cases-with-crewai/" target="_blank">Practical Multi AI Agents with crewAI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1301,16 +866,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>7-5 Evaluation and control 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Evaluate the overall performance and controllability of MAS.</span>
-                <span class="zh-text">評估多智慧代理系統的整體效能與可控性。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">System optimization and risk monitoring.</span>
-                <span class="zh-text">系統優化與風險監控。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>評估多智慧代理系統的整體效能與可控性。</div>
+            <div class="use-case"><strong>適用情境：</strong>系統優化與風險監控。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1323,16 +880,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>7-6 Emergent behaviors and risks 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Study emergent behaviors and potential risks from agent interactions.</span>
-                <span class="zh-text">研究多智慧代理交互產生的新興行為及其潛在風險。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Advanced AI safety research.</span>
-                <span class="zh-text">高階 AI 安全研究。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>研究多智慧代理交互產生的新興行為及其潛在風險。</div>
+            <div class="use-case"><strong>適用情境：</strong>高階 AI 安全研究。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1345,16 +894,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>7-7 Agent-to-Agent interaction (A2A) 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Design interfaces and protocols for direct Agent-to-Agent interaction.</span>
-                <span class="zh-text">設計 Agent 對 Agent 的直接互動介面與協定。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">M2M automated trading and negotiation.</span>
-                <span class="zh-text">機器對機器的自動化交易與協商。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>設計 Agent 對 Agent 的直接互動介面與協定。</div>
+            <div class="use-case"><strong>適用情境：</strong>機器對機器的自動化交易與協商。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/" target="_blank">AI Agentic Design Patterns with AutoGen</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1369,16 +910,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>8-1 Agent evaluation methods 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Master methodologies and tools for evaluating agent capabilities and safety.</span>
-                <span class="zh-text">掌握評估 Agent 能力與安全性的方法論與工具。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Establishing AI product acceptance criteria.</span>
-                <span class="zh-text">建立 AI 產品驗收標準。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>掌握評估 Agent 能力與安全性的方法論與工具。</div>
+            <div class="use-case"><strong>適用情境：</strong>建立 AI 產品驗收標準。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1391,16 +924,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>8-2 Safety risks and misuse 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Identify potential misuse risks and security vulnerabilities of agents.</span>
-                <span class="zh-text">識別 Agent 可能被濫用的風險與安全漏洞。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Red Teaming and security defense.</span>
-                <span class="zh-text">紅隊測試（Red Teaming）與安全防護。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>識別 Agent 可能被濫用的風險與安全漏洞。</div>
+            <div class="use-case"><strong>適用情境：</strong>紅隊測試（Red Teaming）與安全防護。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1413,16 +938,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>8-3 Human-in-the-loop systems 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Design "human-in-the-loop" mechanisms to ensure safety in key decisions.</span>
-                <span class="zh-text">設計「人類介入」機制以確保關鍵決策的安全性。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Decision support systems in high-risk domains.</span>
-                <span class="zh-text">高風險領域的輔助決策系統。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>設計「人類介入」機制以確保關鍵決策的安全性。</div>
+            <div class="use-case"><strong>適用情境：</strong>高風險領域的輔助決策系統。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">AI Agents in LangGraph</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1435,16 +952,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>8-4 Governance, accountability, oversight 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Establish governance frameworks and accountability mechanisms for AI systems.</span>
-                <span class="zh-text">建立 AI 系統的治理架構與問責機制。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Internal organizational AI policy formulation.</span>
-                <span class="zh-text">組織內部的 AI 政策制定。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>建立 AI 系統的治理架構與問責機制。</div>
+            <div class="use-case"><strong>適用情境：</strong>組織內部的 AI 政策制定。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/fine-tuning-and-reinforcement-learning-for-llms-intro-to-post-training/" target="_blank">Fine-tuning and RL for LLMs</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1457,16 +966,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>8-5 Ethical, legal, societal implications 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Explore ethical, legal, and societal impacts of AI agents.</span>
-                <span class="zh-text">探討 AI 代理對倫理、法律與社會的影響。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Regulatory compliance and tech ethics research.</span>
-                <span class="zh-text">法規遵循與科技倫理研究。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>探討 AI 代理對倫理、法律與社會的影響。</div>
+            <div class="use-case"><strong>適用情境：</strong>法規遵循與科技倫理研究。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/generative-ai-for-everyone/" target="_blank">Generative AI for Everyone</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1479,16 +980,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>8-6 Enterprise and public-sector governance 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Develop governance standards tailored for enterprise and public sectors.</span>
-                <span class="zh-text">針對企業與公部門的特殊需求制定治理規範。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">AI adoption strategies for government and large enterprises.</span>
-                <span class="zh-text">政府機關與大型企業的 AI 導入策略。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>針對企業與公部門的特殊需求制定治理規範。</div>
+            <div class="use-case"><strong>適用情境：</strong>政府機關與大型企業的 AI 導入策略。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/generative-ai-for-everyone/" target="_blank">Generative AI for Everyone</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1503,16 +996,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>9-1 System architecture and observability 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Design production-grade agent architectures with high observability.</span>
-                <span class="zh-text">設計具備高可觀測性的生產級 Agent 架構。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Large-scale system operations and performance optimization.</span>
-                <span class="zh-text">大型系統維運與效能優化。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>設計具備高可觀測性的生產級 Agent 架構。</div>
+            <div class="use-case"><strong>適用情境：</strong>大型系統維運與效能優化。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1525,16 +1010,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>9-2 Scaling and cost optimization 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Optimize computational resources and cost-efficiency for large-scale deployments.</span>
-                <span class="zh-text">優化大規模部署時的運算資源與成本效益。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Commercial product operations.</span>
-                <span class="zh-text">商業化產品運營。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>優化大規模部署時的運算資源與成本效益。</div>
+            <div class="use-case"><strong>適用情境：</strong>商業化產品運營。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/efficiently-serving-llms/" target="_blank">Efficiently Serving LLMs</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1547,16 +1024,8 @@
 
         <div class="sub-theme-card level-yellow">
             <h4>9-3 Representative Agentic AI applications 🟡</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Analyze and implement representative Agentic AI use cases.</span>
-                <span class="zh-text">分析與實作具代表性的 Agentic AI 應用案例。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Capstone projects and product prototyping.</span>
-                <span class="zh-text">專題製作與產品原型開發。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>分析與實作具代表性的 Agentic AI 應用案例。</div>
+            <div class="use-case"><strong>適用情境：</strong>專題製作與產品原型開發。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/practical-multi-ai-agents-and-advanced-use-cases-with-crewai/" target="_blank">Practical Multi AI Agents with crewAI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1569,16 +1038,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>9-4 End-to-end system integration 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Integrate frontend, backend, and AI models for end-to-end development.</span>
-                <span class="zh-text">整合前端、後端與 AI 模型，完成端到端的系統開發。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Complete product delivery.</span>
-                <span class="zh-text">完整產品交付。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>整合前端、後端與 AI 模型，完成端到端的系統開發。</div>
+            <div class="use-case"><strong>適用情境：</strong>完整產品交付。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/" target="_blank">Design, Develop, Deploy Multi-Agent Systems</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1593,16 +1054,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>10-1 Coding agents 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Develop agents capable of automatically writing and debugging code.</span>
-                <span class="zh-text">開發能自動撰寫與修正程式碼的 Agent。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Assisted software development and automated testing.</span>
-                <span class="zh-text">輔助軟體開發與自動化測試。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>開發能自動撰寫與修正程式碼的 Agent。</div>
+            <div class="use-case"><strong>適用情境：</strong>輔助軟體開發與自動化測試。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-toward-computer-use-with-anthropic/" target="_blank">Building Toward Computer Use</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1615,16 +1068,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>10-2 Computer-use agents 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Implement agents capable of controlling computer UIs to execute tasks.</span>
-                <span class="zh-text">實作能操控電腦介面（UI）執行任務的 Agent。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">RPA (Robotic Process Automation) and desktop automation.</span>
-                <span class="zh-text">RPA（流程自動化）與桌面工作自動化。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>實作能操控電腦介面（UI）執行任務的 Agent。</div>
+            <div class="use-case"><strong>適用情境：</strong>RPA（流程自動化）與桌面工作自動化。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-toward-computer-use-with-anthropic/" target="_blank">Building Toward Computer Use</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1637,16 +1082,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>10-3 Emerging protocols and standards 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Track and participate in emerging protocols and standards in Agentic AI.</span>
-                <span class="zh-text">追蹤並參與 Agentic AI 領域的新興協定與標準制定。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Forward-looking research and standardization work.</span>
-                <span class="zh-text">前瞻技術研究與標準化工作。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>追蹤並參與 Agentic AI 領域的新興協定與標準制定。</div>
+            <div class="use-case"><strong>適用情境：</strong>前瞻技術研究與標準化工作。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/short-courses/building-toward-computer-use-with-anthropic/" target="_blank">Building Toward Computer Use</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1659,16 +1096,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>10-4 World Foundation Models (WFM) 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Understand foundation models with physical world understanding.</span>
-                <span class="zh-text">了解具備物理世界理解能力的基礎模型。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Robotics control and physical world interaction simulation.</span>
-                <span class="zh-text">機器人控制與實體世界互動模擬。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>了解具備物理世界理解能力的基礎模型。</div>
+            <div class="use-case"><strong>適用情境：</strong>機器人控制與實體世界互動模擬。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/generative-ai-with-llms/" target="_blank">Generative AI with LLMs</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1681,16 +1110,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>10-5 Long-horizon autonomy 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Research key technical challenges in achieving long-term autonomy.</span>
-                <span class="zh-text">研究實現長期自主運作 Agent 的關鍵技術挑戰。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Future direction towards Artificial General Intelligence (AGI).</span>
-                <span class="zh-text">未來通用人工智慧（AGI）研究方向。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>研究實現長期自主運作 Agent 的關鍵技術挑戰。</div>
+            <div class="use-case"><strong>適用情境：</strong>未來通用人工智慧（AGI）研究方向。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/agentic-ai/" target="_blank">Agentic AI</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1703,16 +1124,8 @@
 
         <div class="sub-theme-card level-red">
             <h4>10-6 Emerging research 🔴</h4>
-            <div class="learning-objective">
-                <strong><span class="en-text">Objective: </span><span class="zh-text">學習目標：</span></strong>
-                <span class="en-text">Follow the latest academic publications and frontier tech in Agentic AI.</span>
-                <span class="zh-text">跟進 Agentic AI 領域的最新學術發表與前沿技術。</span>
-            </div>
-            <div class="use-case">
-                <strong><span class="en-text">Use Case: </span><span class="zh-text">適用情境：</span></strong>
-                <span class="en-text">Academic research and innovative application development.</span>
-                <span class="zh-text">學術研究與創新應用開發。</span>
-            </div>
+            <div class="learning-objective"><strong>學習目標：</strong>跟進 Agentic AI 領域的最新學術發表與前沿技術。</div>
+            <div class="use-case"><strong>適用情境：</strong>學術研究與創新應用開發。</div>
             <ul>
                 <li>DeepLearning.AI – <a href="https://www.deeplearning.ai/courses/fine-tuning-and-reinforcement-learning-for-llms-intro-to-post-training/" target="_blank">Fine-tuning and RL for LLMs</a></li>
                 <li>Microsoft – <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank">AI Agents for Beginners</a></li>
@@ -1727,28 +1140,9 @@
 
 </div>
 
-<div id="back-to-top" title="Back to Top">
-    <span class="en-text">↑ Top</span>
-    <span class="zh-text">↑ 回頂部</span>
-</div>
+<div id="back-to-top" title="回到頂部">↑ 回頂部</div>
 
 <script>
-    // Language Toggle Logic
-    const body = document.body;
-    const langBtn = document.getElementById('langBtn');
-    
-    function toggleLanguage() {
-        if (body.classList.contains('lang-en')) {
-            body.classList.remove('lang-en');
-            body.classList.add('lang-zh');
-            langBtn.textContent = 'Switch to English';
-        } else {
-            body.classList.remove('lang-zh');
-            body.classList.add('lang-en');
-            langBtn.textContent = 'Switch to Chinese (切換至繁體中文)';
-        }
-    }
-
     // Back to top button logic
     var backToTopButton = document.getElementById("back-to-top");
 
