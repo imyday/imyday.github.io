@@ -1,6 +1,6 @@
 # imyday.github.io
 Min-Yuh Day  
-Professor  
+Professor and Director 
 Graduate Institute of Information Management, National Taipei University  
 Tel: 886-2-86741111 ext. 66873  
 Office: B8F12  
